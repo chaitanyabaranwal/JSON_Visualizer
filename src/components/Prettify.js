@@ -7,7 +7,7 @@ class Prettify extends React.Component {
 
     return (
       <div>
-        {jsonParsed}
+        <pre><code>{jsonParsed}</code></pre>
       </div>
     )
   }
