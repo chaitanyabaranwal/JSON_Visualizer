@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
 import JSONForm from './components/JSONForm';
 import Prettify from './components/Prettify';
 
@@ -12,8 +13,31 @@ class App extends Component {
     }
 
     this.prettifyJSON = this.prettifyJSON.bind(this);
+    this.inputView = this.inputView.bind(this);
+    this.prettifyView = this.prettifyView.bind(this);
+    this.visualizeView = this.visualizeView.bind(this);
   }
 
+  // Functions to handle view change
+  inputView() {
+    this.setState({
+      view_mode: 'input',
+    });
+  }
+  
+  prettifyView() {
+    this.setState({
+      view_mode: 'prettify',
+    });
+  }
+
+  visualizeView() {
+    this.setState({
+      view_mode: 'visualize',
+    });
+  }
+
+  // On clicking prettify JSON button
   prettifyJSON(json_data) {
     this.setState({
       json_data: json_data,
@@ -36,6 +60,7 @@ class App extends Component {
 
     return (
       <div>
+        <Navbar inputView={this.inputView} prettifyView={this.prettifyView} visualizeView={this.visualizeView} />
         {show_mode}
       </div>
     );

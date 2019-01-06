@@ -6,7 +6,7 @@ import { Typography } from '@material-ui/core';
 class JSONForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: "{}"};
+        this.state = {value: this.props.json};
 
         this.handleChange = this.handleChange.bind(this);
     }
