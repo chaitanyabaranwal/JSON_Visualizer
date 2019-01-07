@@ -1,16 +1,14 @@
 import React from 'react';
 
 // Output of prettified JSON
-class Prettify extends React.Component {
-  render() {
-    let jsonParsed = JSON.stringify(JSON.parse(this.props.json), undefined, 4);
+const Prettify = (props) => {
+  let jsonParsed = JSON.stringify(JSON.parse(props.json), undefined, 4);
 
-    return (
-      <div>
-        <pre><code>{jsonParsed}</code></pre>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <pre><code>{jsonParsed}</code></pre>
+    </div>
+  );
 }
 
 export default Prettify;

@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import JSONForm from './components/JSONForm';
 import Prettify from './components/Prettify';
+import Visualize from './components/Visualize';
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +56,9 @@ class App extends Component {
         break;
       case 'prettify':
         show_mode = <Prettify json={this.state.json_data} />
+        break;
+      case 'visualize':
+        show_mode = <Visualize json={this.state.json_data} />
         break;
     }
 
