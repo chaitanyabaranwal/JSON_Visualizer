@@ -30,3 +30,31 @@
     transform: rotate(360deg);
   }
 }
+
+/* CSS written for app components */
+
+.json-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.json-input {
+  margin-bottom: 20px;
+  background-color: #000a12;
+  color: white;
+  border: none;
+  border-bottom: 1px solid #12005e;
+  padding: 10px;
+}
+
+.json-input:focus {
+  outline: none;
+}
+
+.form-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

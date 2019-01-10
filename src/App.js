@@ -39,10 +39,18 @@ class App extends Component {
   }
 
   // On clicking prettify JSON button
-  prettifyJSON(json_data) {
+  prettifyJSON(json) {
     this.setState({
-      json_data: json_data,
+      json_data: json,
       view_mode: 'prettify',
+    });
+  }
+
+  // On clicking visualize JSON button
+  visualizeJSON(json) {
+    this.setState({
+      json_data: json,
+      view_mode: 'visualize',
     });
   }
 
@@ -52,7 +60,8 @@ class App extends Component {
 
     switch (view_mode) {
       case 'input':
-        show_mode = <JSONForm json={this.state.json_data} handleSubmit={(json_data) => this.prettifyJSON(json_data)} />
+        show_mode = <JSONForm json={this.state.json_data} prettifySubmit={(json) => this.prettifyJSON(json)}
+          visualizeSubmit={(json) => this.visualizeJSON(json)} />
         break;
       case 'prettify':
         show_mode = <Prettify json={this.state.json_data} />
