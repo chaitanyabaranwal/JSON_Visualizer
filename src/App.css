@@ -33,6 +33,7 @@
 
 /* CSS written for app components */
 
+/* JSON Input Page */
 .json-form {
   display: flex;
   justify-content: center;
@@ -58,3 +59,17 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Prettify page */
+.prettify-output {
+  padding: 25px;
+  color: white;
+  line-height: 22px;
+  font-size: 90%;
+}
+
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
