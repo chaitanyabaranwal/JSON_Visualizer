@@ -6,31 +6,29 @@ export function ToJsonTree(json, rootName) {
   var JsonTree = new Object(); 
   JsonTree.name = rootName;
   JsonTree.children = [];
-
   
   for (var key in json) {
     var currentObj = new Object();
     currentObj.name = key;    // / add every key as 'name' to label nodes
 
     // nested nodes if inner element is an array
-    if (json[key].constructor === Array) {
-      currentObj.children = []
-      for (var arrayItem in json[key]) {
-        var arrayObj = new Object();
-        arrayObj.name = 'ggg';
-        currentObj.children.push(arrayObj);
-      }
+    if (json[key] instanceof Array) {
+      currentObj.children = json[key].map(createObject);
       JsonTree.children.push(currentObj);
     }
     // nested nodes if inner element is JSON itself
-    else if (json[key].constructor === Object) {
+    else if (json[key] instanceof Object)
       JsonTree.children.push(ToJsonTree(json[key], key));
-    }
-    else {
+    else
       JsonTree.children.push(currentObj);
-    }
-
   }
 
   return JsonTree;
+}
+
+// function to create new object
+function createObject() {
+  var obj = new Object();
+  obj.name = 'ggg';
+  return obj;
 }
