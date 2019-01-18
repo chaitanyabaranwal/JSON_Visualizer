@@ -24,7 +24,7 @@ class Visualize extends React.Component {
     const container = visualize.createSvg();
 
     // add links between nodes
-    const link = visualize.createLinks(container, nodes);
+    visualize.createLinks(container, nodes);
     
     // add each node as a group
     const node = visualize.addNode(container, nodes);

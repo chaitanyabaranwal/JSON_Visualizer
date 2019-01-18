@@ -3,12 +3,12 @@
 export function ToJsonTree(json, rootName) {
 
   // final converted JSON
-  var JsonTree = new Object(); 
+  var JsonTree = {}; 
   JsonTree.name = rootName;
   JsonTree.children = [];
   
   for (var key in json) {
-    var currentObj = new Object();
+    var currentObj = {};
     currentObj.name = key;    // / add every key as 'name' to label nodes
 
     // nested nodes if inner element is an array
@@ -28,7 +28,7 @@ export function ToJsonTree(json, rootName) {
 
 // function to create new object
 function createObject() {
-  var obj = new Object();
+  var obj = {};
   obj.name = 'ggg';
   return obj;
 }

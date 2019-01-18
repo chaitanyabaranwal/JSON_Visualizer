@@ -5,7 +5,7 @@ function addClass(string, className) {
 
 // Using regex to determine what kind of object it is
 export function syntaxHighlight(json) {
-    return json.replace(/("(\\u(\w+)|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
+    return json.replace(/("(\\u(\w+)|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g, function(match) {
         var cls = 'number';
         if (/^"/.test(match)) {
             if (/:$/.test(match))

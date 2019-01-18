@@ -68,12 +68,16 @@
   font-size: 90%;
 }
 
-.string { color: green; }
-.number { color: darkorange; }
-.boolean { color: blue; }
-.null { color: magenta; }
-.key { color: red; }
+.string { color: #00e676; }
+.number { color: #eeff41; }
+.boolean { color: #ea80fc; }
+.null { color: #ff3d00; }
+.key { 
+  color: #03DAC6;
+  font-weight: bold;
+}
 
+/* Visualize JSON */
 .node circle {
   fill: #fff;
   stroke: steelblue;

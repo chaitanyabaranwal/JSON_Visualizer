@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 
 // Output of prettified JSON
 const Prettify = (props) => {
-  let jsonParsed = parse(syntaxHighlight(JSON.stringify(JSON.parse(props.json), undefined, 4)));
+  const jsonParsed = parse(syntaxHighlight(JSON.stringify(JSON.parse(props.json), undefined, 4)));
 
   return (
     <div className='prettify-output'>
