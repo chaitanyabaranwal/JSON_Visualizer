@@ -3,30 +3,39 @@
 export function ToJsonTree(json, rootName) {
 
   // final converted JSON
-  let JsonTree = {}; 
-  JsonTree.name = rootName;
-  JsonTree.children = [];
+  let JsonTree = {
+    "name": rootName,
+    "value": "children count: " + Object.keys(json).length,
+    "children": [],
+  };
   
   for (let key in json) {
-    let currentObj = {};
-    currentObj.name = key;    // add every key as 'name' to label nodes
+
+    let currentObj = {
+      "name": key,
+    };
 
     // nested nodes if inner element is an array
     if (json[key] instanceof Array) {
+      currentObj.value = "children count: " + json[key].length;
       currentObj.children = json[key].map((item, index) => {
-        let container = {};
-        console.log(`${key}[${index}]`);
-        container["name"] = `${key}[${index}]`;
-        return container;
+        return {
+          "name": `${key}[${index}]`,
+          "value": item,
+        };
       });
       JsonTree.children.push(currentObj);
     }
 
     // nested nodes if inner element is JSON itself
-    else if (json[key] instanceof Object)
+    else if (json[key] instanceof Object) {
       JsonTree.children.push(ToJsonTree(json[key], key));
-    else
+    }
+
+    else {
+      currentObj.value = json[key];
       JsonTree.children.push(currentObj);
+    }
   }
 
   return JsonTree;

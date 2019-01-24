@@ -32,6 +32,21 @@ function addNode(container, nodes) {
           });
 }
 
+// add circle, text and tooltip to all nodes
+function styleNode(node) {
+
+  node.append('circle').attr('r', constants.node_radius);
+
+  node.append('text').attr('dy', '.35em')
+    .attr('x', function(d) { return d.children ? -constants.text_position : constants.text_position; })
+    .style('text-anchor', function(d) { return d.children ? 'end' : 'start' })
+    .text(function(d) { return d.data.name });
+    
+  node.append('svg:title').text(function(d) { 
+    return d.data.value; 
+  });
+}
+
 export {
-  createSvg, createLinks, addNode
+  createSvg, createLinks, addNode, styleNode
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { tree, hierarchy, select } from 'd3';
 import { ToJsonTree } from '../helpers/json-tree.js';
-import { height, width, node_radius, text_position } from '../helpers/constants.js';
+import { height, width } from '../helpers/constants.js';
 import * as visualize from '../helpers/json-visualize.js';
 
 // Output of visualized JSON
@@ -16,6 +16,8 @@ class Visualize extends React.Component {
 
   visualizeJson() {
 
+    console.log(this.state.json_data);
+
     // assign json data to node-layout
     const treemap = tree().size([height, width]);
     const nodes = treemap(hierarchy(this.state.json_data))
@@ -29,14 +31,8 @@ class Visualize extends React.Component {
     // add each node as a group
     const node = visualize.addNode(container, nodes);
 
-    // add circle to node
-    node.append('circle').attr('r', node_radius);
-
-    // add text to node
-    node.append('text').attr('dy', '.35em')
-      .attr('x', function(d) { return d.children ? -text_position : text_position; })
-      .style('text-anchor', function(d) { return d.children ? 'end' : 'start' })
-      .text(function(d) { return d.data.name });
+    // display nodes as circle with descriptions
+    visualize.styleNode(node);
   }
 
   removeJson() {
