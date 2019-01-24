@@ -1,4 +1,4 @@
-const margin = {top: 20, left: 90, bottom: 30, right: 90};
+const margin = {top: 20, left: 150, bottom: 30, right: 150};
 const width = window.innerWidth - margin.left - margin.right;
 const height = window.innerHeight - margin.top - margin.bottom;
 const node_radius = 8;
