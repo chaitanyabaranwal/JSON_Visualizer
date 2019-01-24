@@ -82,17 +82,18 @@
   fill: #fff;
 }
 
-.node text { 
+.node-leaf text { 
   font: 12px sans-serif;
-  color: #fff;
+  fill: #fff;
 }
 
 .node-internal text {
-  color: #fff;
+  font: 12px sans-serif;
+  fill: #fff;
 }
 
 .link {
   fill: none;
   stroke: #ccc;
-  stroke-width: 2px;
+  stroke-width: 1px;
 }

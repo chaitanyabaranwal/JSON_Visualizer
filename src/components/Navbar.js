@@ -7,8 +7,8 @@ import Button from '@material-ui/core/Button';
 // Navbar to shift between views in the app
 function Navbar(props) {
   return (
-    <div className='navbar'>
-      <AppBar position='static'>
+    <div className='navbar' style={{ paddingTop: 56 }}>
+      <AppBar>
         <Toolbar>
           <Typography variant='title' color='inherit' style={{ flex:1 }}>JSON Visualizer</Typography>
           <Button color='inherit' onClick={props.inputView}>JSON-Input</Button>
