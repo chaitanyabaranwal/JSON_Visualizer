@@ -17,13 +17,17 @@ export function ToJsonTree(json, rootName) {
 
     // nested nodes if inner element is an array
     if (json[key] instanceof Array) {
+      
       currentObj.value = "children count: " + json[key].length;
       currentObj.children = json[key].map((item, index) => {
-        return {
-          "name": `${key}[${index}]`,
-          "value": item,
-        };
+        let obj = {"name": `${key}[${index}]`};
+        if (item instanceof Object)
+          obj.value = JSON.stringify(item);
+        else
+          obj.value = item;
+        return obj;
       });
+
       JsonTree.children.push(currentObj);
     }
 
