@@ -6,6 +6,10 @@ How does it work? It converts the user's JSON input into a special parent-child 
 
 [Try it now!](https://jsonvisualizer.netlify.com)
 
+## Screenshots
+
+![JSON Visualizer](https://raw.githubusercontent.com/chaitanyabaranwal/JSON_Visualizer/master/public/screenshots.gif)
+
 ## Features
 1. JSON-Input form takes the JSON-input from the user.
 2. The Prettify view converts the unformatted JSON into having proper indentation and color codes.
