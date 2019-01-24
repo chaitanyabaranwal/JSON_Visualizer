@@ -26,7 +26,7 @@ function createLinks(container, nodes) {
 function addNode(container, nodes) {
   return container.selectAll('.node').data(nodes.descendants()).enter().append('g')
           .attr('class', function(d) { 
-            return 'node' + (d.children ? ' node-internal' : ' node-leaf') 
+            return ('node' + (d.children ? ' node-internal' : ' node-leaf'));
           }).attr('transform', function(d) { 
             return ('translate(' + d.y + ',' + d.x + ')')
           });

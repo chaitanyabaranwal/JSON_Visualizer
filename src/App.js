@@ -4,12 +4,13 @@ import Navbar from './components/Navbar';
 import JSONForm from './components/JSONForm';
 import Prettify from './components/Prettify';
 import Visualize from './components/Visualize';
+import { SAMPLE_JSON } from './helpers/constants.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      json_data: "{}",
+      json_data: SAMPLE_JSON,
       view_mode: 'input',
     }
 
