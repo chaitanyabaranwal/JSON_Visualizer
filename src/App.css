@@ -78,8 +78,12 @@
 }
 
 /* Visualize JSON */
-.node circle {
-  fill: #fff;
+.node-leaf circle {
+  fill: #00e676;
+}
+
+.node-internal circle {
+  fill:  #03DAC6;
 }
 
 .node-leaf text { 
@@ -89,6 +93,7 @@
 
 .node-internal text {
   font: 12px sans-serif;
+  font-weight: bold;
   fill: #fff;
 }
 
