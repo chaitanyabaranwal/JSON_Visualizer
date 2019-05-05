@@ -70,6 +70,8 @@ class App extends Component {
       case 'visualize':
         show_mode = <Visualize json={this.state.json_data} />
         break;
+      default:
+        break;
     }
 
     return (
